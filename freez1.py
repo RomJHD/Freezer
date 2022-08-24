@@ -17,6 +17,8 @@
 
     # in binary mode
 
+#Création des variables et importation des modules
+
 from ftplib import FTP
 import os, sys, subprocess, time
 
@@ -25,11 +27,15 @@ musique=""
 musiqueok=""
 #    login=sys.argv[1]
 #    passwd=sys.argv[2]
- 
+
+#Etapes avant boucle
+
 login=input("Quel est votre login ?")
 passwd=input("Quel est votre password ?")
 server=input("Quel est le serveur sur lequel il faut se connecter ?")
 boucle=True
+
+#Boucle main du streaming
 
 while boucle:
     
@@ -38,6 +44,8 @@ while boucle:
     list_music=os.popen(cmd).read().split("\n")
     print(list_music)
     test_zic=input(" Quelle musique voulez vous ecouter :")
+
+# Vérification si la musique demandée est sur le serveur FTP ou pas 
 
     for i in list_music:
         if test_zic in i:
